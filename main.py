@@ -21,7 +21,9 @@ zonas_claves = {
     "Zona 1": "clave123",
     "Zona 2": "clave456",
     "Zona 3": "clave789",
-    "Zona 4": "clave012"
+    "Zona 4": "clave012",
+    "Zona 5": "clave013",
+    "Zona 6": "clave014
 }
 
 # Estilo CSS para ajustar el diseño
@@ -202,16 +204,18 @@ def cargar_datos():
     df_zona2 = pd.read_excel('df_zona2.xlsx')
     df_zona3 = pd.read_excel('df_zona3.xlsx')
     df_zona4 = pd.read_excel('df_zona4.xlsx')
-    return df_zona1, df_zona2, df_zona3, df_zona4
+    df_zona5 = pd.read_excel('df_zona5.xlsx')
+    df_zona6 = pd.read_excel('df_zona6.xlsx')
+    return df_zona1, df_zona2, df_zona3, df_zona4, df_zona5, df_zona6
 
 # Cargar los datos
-df_zona1, df_zona2, df_zona3, df_zona4 = cargar_datos()
+df_zona1, df_zona2, df_zona3, df_zona4, df_zona5, df_zona6 = cargar_datos()
 
 # Selección de la zona si la clave no es correcta aún
 if not st.session_state.clave_correcta:
     st.title("Acceso a Zonas")
     
-    zona_seleccionada = st.selectbox("Selecciona una zona para acceder:", ["Zona 1", "Zona 2", "Zona 3", "Zona 4"])
+    zona_seleccionada = st.selectbox("Selecciona una zona para acceder:", ["Zona 1", "Zona 2", "Zona 3", "Zona 4";"Zona 5"; "Zona 6"])
 
     # Solicitar clave de acceso
     clave_ingresada = st.text_input(f"Ingresa la clave para {zona_seleccionada}:", type="password")
@@ -401,3 +405,7 @@ if st.session_state.clave_correcta:
         visualizar_datos_por_zona(df_zona3, st.session_state.zona_seleccionada)
     elif st.session_state.zona_seleccionada == "Zona 4":
         visualizar_datos_por_zona(df_zona4, st.session_state.zona_seleccionada)
+    elif st.session_state.zona_seleccionada == "Zona 5":
+        visualizar_datos_por_zona(df_zona5, st.session_state.zona_seleccionada)
+    elif st.session_state.zona_seleccionada == "Zona 6":
+        visualizar_datos_por_zona(df_zona6, st.session_state.zona_seleccionada)
