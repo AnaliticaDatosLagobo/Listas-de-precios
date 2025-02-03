@@ -23,7 +23,7 @@ zonas_claves = {
     "Zona 3": "clave789",
     "Zona 4": "clave012",
     "Zona 5": "clave013",
-    "Zona 6": "clave014
+    "Zona 6": "clave014"
 }
 
 # Estilo CSS para ajustar el diseño
