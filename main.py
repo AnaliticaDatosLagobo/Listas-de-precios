@@ -215,7 +215,7 @@ df_zona1, df_zona2, df_zona3, df_zona4, df_zona5, df_zona6 = cargar_datos()
 if not st.session_state.clave_correcta:
     st.title("Acceso a Zonas")
     
-    zona_seleccionada = st.selectbox("Selecciona una zona para acceder:", ["Zona 1", "Zona 2", "Zona 3", "Zona 4";"Zona 5"; "Zona 6"])
+    zona_seleccionada = st.selectbox("Selecciona una zona para acceder:", ["Zona 1", "Zona 2", "Zona 3", "Zona 4","Zona 5","Zona 6"])
 
     # Solicitar clave de acceso
     clave_ingresada = st.text_input(f"Ingresa la clave para {zona_seleccionada}:", type="password")
